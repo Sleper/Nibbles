@@ -6,12 +6,12 @@ var snake = [];
 var pressedDown = false;
 var pressedUp  = false;
 var pressedLeft = false;
-var pressedRight = false;
+var pressedRight = true;
 
 // Game is being runned while true.
 var runGame = true;
 // FrameRate
-const FRAME_RATE = 15;
+const FRAME_RATE = 12;
 // food initial coordinates
 var foodx = 200;
 var foody = 20;
@@ -41,7 +41,7 @@ function resetGame() {
 	pressedDown = false;
 	pressedUp  = false;
 	pressedLeft = false;
-	pressedRight = false;
+	pressedRight = true;
 	generateSnake();
 	startGame();
 
@@ -91,26 +91,6 @@ function displayScore() {
 
 }
 
-function drawSnake(x,y){
-	ctx.beginPath();
-	//.rect( xposition, yposition, length, height);
-	ctx.rect(x,y,20,20);
-	ctx.stroke();
-	ctx.fillStyle = 'green';
-	ctx.fill();
-	ctx.closePath();
-}
-
-function drawFood() {
-	ctx.beginPath();
-	//.rect( xposition, yposition, length, height);
-	ctx.rect(foodx,foody,20,20);
-	ctx.stroke();
-	ctx.fillStyle = 'white';
-	ctx.fill();
-	ctx.closePath();
-}
-
 function generateSnake() {
 	for (var i = 1; i >= 0; i--){
 	//	drawSnake(i*20, 80);
@@ -128,6 +108,16 @@ function snakeUpdate() {
 	}
 }
 
+function drawSnake(x,y){
+	ctx.beginPath();
+	//.rect( xposition, yposition, length, height);
+	ctx.rect(x,y,20,20);
+	ctx.stroke();
+	ctx.fillStyle = 'green';
+	ctx.fill();
+	ctx.closePath();
+}
+
 function generateFoodPosition(){
 	// Generating random coordinates for the food.
 	if (snake[0].x == foodx && snake[0].y == foody) {
@@ -140,6 +130,17 @@ function generateFoodPosition(){
 		snake.pop();
 	}
 }
+
+function drawFood() {
+	ctx.beginPath();
+	//.rect( xposition, yposition, length, height);
+	ctx.rect(foodx,foody,20,20);
+	ctx.stroke();
+	ctx.fillStyle = 'red';
+	ctx.fill();
+	ctx.closePath();
+}
+
 
 function snakeDirection() {
 	if (pressedDown) {
@@ -170,9 +171,9 @@ function gameLoop(){
 	ctx.clearRect(0,0, canvas.width, canvas.height);
 	drawFood();
 	snakeDirection();
+	gameOverCondition();
 	generateFoodPosition();
 	snakeUpdate();
-	gameOverCondition();
 	displayScore();
 } 
 
