@@ -17,23 +17,19 @@ var foodx = 200;
 var foody = 20;
 var r = 0;
 
-
+// Keeping score and High scor
 var score = 0;
 var ls = localStorage['tls'];
 var hScore = ls;
 
-var gameOverMenu;
-gameOverMenu = document.getElementById("gameOver");
-var resetButton = document.querySelector('#restartButton');
-var easyMode = document.querySelector('#easy');
-var hardMode = document.querySelector('#hard');
 
+var gameOverMenu = document.getElementById("gameOver");
+var resetButton = document.querySelector('#restartButton');
 
 
 document.addEventListener( 'keydown' , keyDownHandler);
-
-
 resetButton.addEventListener('click', resetGame);
+
 
 generateSnake();
 
@@ -53,7 +49,7 @@ function resetGame() {
 
 // Checking which button is pressed.
 function keyDownHandler(e) {
-	if(e.code == 'ArrowDown' && pressedUp == false) {
+	if (e.code == 'ArrowDown' && pressedUp == false) {
 		pressedDown = true;
 		pressedUp  = false;
 		pressedLeft = false;
@@ -87,11 +83,11 @@ function gameOver() {
 function displayScore() {
 	ctx.font = "20px Arial";
 	ctx.fillStyle = 'white';
-	ctx.fillText('Score : ' + score, 25, 620);
+	ctx.fillText('Score : ' + score, 25,590);
 	if (hScore < score){
 		hScore = score;
 	}
-	ctx.fillText('High Score : ' + hScore, 425, 620)
+	ctx.fillText('High Score : ' + hScore, 425, 590)
 
 }
 
@@ -161,7 +157,7 @@ function snakeDirection() {
 
 function gameOverCondition() {
 		// Displaying gameOver conditions
-		if(snake[0].x < 0 || snake[0].x > canvas.width || snake[0].y < 0 || snake[0].y > canvas.height){
+	if(snake[0].x < 0 || snake[0].x > canvas.width || snake[0].y < 0 || snake[0].y > canvas.height){
 		gameOver();
 	}
 }
@@ -174,9 +170,9 @@ function gameLoop(){
 	ctx.clearRect(0,0, canvas.width, canvas.height);
 	drawFood();
 	snakeDirection();
-	gameOverCondition()
-	generateFoodPosition()
+	generateFoodPosition();
 	snakeUpdate();
+	gameOverCondition();
 	displayScore();
 } 
 
