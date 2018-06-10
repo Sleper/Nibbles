@@ -6,10 +6,10 @@ canvas {
 	border: 3px solid white;
 	background-color: black;
 	padding-left: 0;
-    padding-right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+	padding-right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
 }
 
 h1, h3 {
@@ -36,8 +36,8 @@ h1, h3 {
 
 #restartButton {
 	padding-left: 120px;
-    padding-right: auto;
-    display: block;
+	padding-right: auto;
+	display: block;
 	border: 2px solid white;
 	background: black;
 	text-transform: uppercase;
