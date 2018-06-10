@@ -157,7 +157,7 @@ function snakeDirection() {
 
 function gameOverCondition() {
 		// Displaying gameOver conditions
-	if(snake[0].x < 0 || snake[0].x > canvas.width || snake[0].y < 0 || snake[0].y > canvas.height){
+	if(snake[0].x < 0 || snake[0].x >= canvas.width || snake[0].y < 0 || snake[0].y >= canvas.height){
 		gameOver();
 	}
 }
