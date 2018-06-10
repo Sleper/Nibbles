@@ -21,9 +21,8 @@ h1, h3 {
 #gameOver {
 	position: absolute;
 	margin: 0px auto;
-	padding-right: 0px;
-	padding-left: 800px;
-	padding-top: 240px;
+	padding-left: 40%;
+	padding-top: 14%;
 	visibility: hidden;	
 }
 
