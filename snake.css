@@ -1,0 +1,54 @@
+body {
+	background-color: steelblue;
+	margin: 0;
+}
+canvas {
+	border: 3px solid white;
+	background-color: black;
+	padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+h1, h3 {
+	font-family: 'Times New Roman', cursive;
+	color: white;
+}
+
+
+#gameOver {
+	position: absolute;
+	margin: 0px auto;
+	padding-right: 0px;
+	padding-left: 800px;
+	padding-top: 240px;
+	visibility: hidden;	
+}
+
+.titleOver {
+	color:white;
+	font-size: 62px;
+	margin-bottom:  0px;
+	margin-top: 0px;
+}
+
+#restartButton {
+	padding-left: 120px;
+    padding-right: auto;
+    display: block;
+	border: 2px solid white;
+	background: black;
+	text-transform: uppercase;
+	height: 100%;
+	font-weight: 700;
+	color: white;
+	letter-spacing: 2px;
+	outline: none;
+}
+
+#restartButton:hover {
+	background-color: white;
+	color: black;
+}
