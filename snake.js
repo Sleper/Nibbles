@@ -11,7 +11,7 @@ var pressedRight = false;
 // Game is being runned while true.
 var runGame = true;
 // FrameRate
-const FRAME_RATE = 10;
+const FRAME_RATE = 15;
 // food initial coordinates
 var foodx = 200;
 var foody = 20;
